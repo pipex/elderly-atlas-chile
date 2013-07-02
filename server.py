@@ -1,12 +1,14 @@
-from bottle import error, route, static_file, run, redirect
+import bottle
+from bottle import Bottle, static_file
 
+app = Bottle()
 
-@route('')
-@route('/')
+@app.route('')
+@app.route('/')
 def index():
 	return static_file('index.html', root='web')
 
-@route('/:path#.+#', name='/')
+@app.route('/:path#.+#', name='/')
 def send_static(path):
     """Configure static routes"""
     return static_file(path, root='web')
@@ -16,7 +18,7 @@ def send_static(path):
 # Web errors
 ###########################################
 
-@error(404)
+@app.error(404)
 def Error404(code):
     return static_file('404.html', root='web')
 
@@ -27,11 +29,7 @@ def Error404(code):
 
 # The application execution goes at the end so all routes are loaded
 def main():
-#    # TODO: Remove on production
-    # bottle.debug(True)
-#
-    # bottle.default_app().catchall = False
-    run(host='localhost', port=8080)
+    bottle.run(app=app)
 
 if __name__ == '__main__':
     main()
