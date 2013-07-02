@@ -164,7 +164,7 @@ var data = {
     "POB_INE":1814079,
     "PORC_AM":0.161096623
   },
-  "bdo_ohiggins" : {
+  "libertador" : {
     "REGION":"VI. L. Bdo. O'Higgins",
     "ID":"bdo_ohiggins",
     "PORC_NEDU_BAJO":0.631173783,
@@ -230,7 +230,7 @@ var data = {
     "POB_INE":1031622,
     "PORC_AM":0.146966621
   },
-  "biobio" : {
+  "bio-bio" : {
     "REGION":"VIII. Bíobío",
     "ID":"biobio",
     "PORC_NEDU_BAJO":0.480834439,
@@ -296,7 +296,7 @@ var data = {
     "POB_INE":994380,
     "PORC_AM":0.145682737
   },
-  "los_lagos" : {
+  "los-lagos" : {
     "REGION":"X. Los Lagos",
     "ID":"los_lagos",
     "PORC_NEDU_BAJO":0.666726342,
@@ -329,7 +329,7 @@ var data = {
     "POB_INE":867315,
     "PORC_AM":0.130230654
   },
-  "aysen" : {
+  "aisen-del-gen-d-c" : {
     "REGION":"XI. Aysén",
     "ID":"aysen",
     "PORC_NEDU_BAJO":0.84031958,
@@ -428,7 +428,7 @@ var data = {
     "POB_INE":7069645,
     "PORC_AM":0.136890325
   },
-  "los_rios" : {
+  "los-rios" : {
     "REGION":"XIV. Los Ríos",
     "ID":"los_rios",
     "PORC_NEDU_BAJO":0.664094361,
@@ -461,7 +461,7 @@ var data = {
     "POB_INE":382741,
     "PORC_AM":0.153027766
   },
-  "arica" : {
+  "arica-y-parinacota" : {
     "REGION":"XV. Arica y Parinacota",
     "ID":"arica",
     "PORC_NEDU_BAJO":0.599422082,

@@ -15,28 +15,63 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <style>
-        path {
-          stroke: white;
-          stroke-width: 0.25px;
-          ;
+        #header {
+            width: 980px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        #header img {
+            border: 0;
+            float: right;
+        }
+
+        .regions {
+          stroke: #bbb;
+          stroke-width: 1px;
+        }
+
+        #content {
+            width: 980px;
+            margin: 0 auto;
         }
 
         #map {
             float: left;
-            width: 400px;
+            margin-left: 100px;
+            width: 380px;
+        }
+
+        #container {
+           position: fixed;
+           top: 50%;
+           margin-top: -194px;/* half of #content height*/
+           margin-left: 520px;
+           ft
         }
 
         #data {
-            font-size: 10pt;
-            float: left;
-            padding-top: 100px;
-            margin-left: 50px;
+            width: 439px;
+            height: 365px;
 
+            /* Decoration */
+            border-left: 1px solid #ccc;
+
+            margin: 0 auto;
+            padding: 10px 0;
         }
 
-        #titulo {
+        #data h2 {
+            text-align: center;
+            margin: 0 auto;
+            font-size: 14pt;
+        }
+
+        .instrucciones {
+            font-weight: normal;
             font-size: 10pt;
-            font-weight: bold;
+            font-style: italic;
+            margin-left: 40px;
         }
 
         #var {
@@ -46,11 +81,60 @@
 
         #data ul {
             list-style-type: none;
+            width: 399px;
+            margin-bottom:20px;
+            margin-left: 0;
+            overflow:hidden;
+            font-size: 10pt;
         }
 
-        #data ul a {
+        #data ul li {
+            line-height:1.5em;
+            border-bottom:1px solid #ccc;
+            float:left;
+            display:inline;
+        }
+
+        #variables li { width:50%;}
+
+        #data ul a, a.visited {
+            color: rgb(78, 68, 60);
             text-decoration: none;
         }
+
+        .selected {
+            font-weight: bold
+        }
+
+        #mapa-instrucciones-container {
+           position: absolute;
+           margin-top: -40px;/* half of #content height*/
+           margin-left: 100px;
+           top: 20%;
+        }
+
+        #mapa-instrucciones {
+            width: 188px;
+            height: 80px;
+        }
+
+        #guia {
+            width: 188px;
+            height: 170px;
+        }
+
+        #guia-container {
+           position: fixed;
+           margin-top: -90px;/* half of #content height*/
+           margin-left: 0px;
+           top: 90%;
+        }
+
+        #guia {
+            width: 188px;
+            height: 170px;
+        }
+
         </style>
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
         <script src="js/vendor/d3.v3.min.js"></script>
@@ -61,11 +145,28 @@
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-
-        <div id="map"></div>
-        <div id="data">
-            <div id="titulo">Variable Seleccionada: <span id="var"></span></div>
-            <ul id="variables"></ul>
+        <div id="header">
+            <a href="/" title="Home"><img src="img/logo.jpg"></a>
+        </div>
+        <div id="content">
+            <div id="map"></div>
+            <div id="container">
+                <div id="data">
+                    <h2 id="region">Chile Continental</h2>
+                    <p class="instrucciones"><b>Haz click sobre las variables en la tabla</b> para ver los valores reflejados en el mapa.</p>
+                    <ul id="variables"></ul>
+                </div>
+            </div>
+            <div id="mapa-instrucciones-container">
+                <div id="mapa-instrucciones">
+                    <p class="instrucciones"><b>Desliza el mouse sobre cada región</b> para ver en la tabla los datos respectivos.</p>
+                </div>
+            </div>
+            <div id="guia-container">
+                <div id="guia">
+                    <img src="img/color.jpg" alt="Mapa de color" />
+                </div>
+            </div>
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -73,6 +174,6 @@
         <script src="js/plugins.js"></script>
         <script src="data/data.js"></script>
         <script src="data/variables.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/atlas.v1.js"></script>
     </body>
 </html>

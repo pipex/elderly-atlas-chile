@@ -1,5 +1,10 @@
-from bottle import error, route, static_file, run
+from bottle import error, route, static_file, run, redirect
 
+
+@route('')
+@route('/')
+def index():
+	return static_file('index.html', root='web')
 
 @route('/:path#.+#', name='/')
 def send_static(path):
