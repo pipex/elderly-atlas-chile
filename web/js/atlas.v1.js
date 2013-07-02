@@ -110,8 +110,9 @@
 				        	.attr('href','#')
 				        	.attr('id', key)
 				        	.attr('title', variables[key]['name'])
-				        	.click(function(obj) {
-				        		var id = $(obj.currentTarget).attr('id');
+				        	.click(function(evt) {
+				        		evt.preventDefault();
+				        		var id = $(evt.currentTarget).attr('id');
 				        		showVariable(id)
 				        	})
 				            .append(key.substring(0,16))
